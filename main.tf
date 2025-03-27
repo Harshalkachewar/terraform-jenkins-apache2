@@ -8,12 +8,13 @@ resource "null_resource" "install_apache" {
       password = "redhat"
       host     = "192.168.180.129"
     }
-
-    inline = [
-      "sudo apt update -y",
-      "sudo apt install apache2 -y",
-      "sudo systemctl start apache2",
-      "sudo systemctl enable apache2"
+    
+inline = [
+      "echo 'redhat' | sudo -S apt update -y",
+      "echo 'redhat' | sudo -S apt install apache2 -y",
+      "echo 'redhat' | sudo -S systemctl start apache2",
+      "echo 'redhat' | sudo -S systemctl enable apache2"
     ]
+
   }
 }
